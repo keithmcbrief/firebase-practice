@@ -10,7 +10,7 @@ import {
 } from "firebase/auth";
 
 const Nav = () => {
-  const [user, setUser] = React.useState({});
+  const [user, setUser] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
@@ -20,7 +20,7 @@ const Nav = () => {
         setUser(user);
       }
     });
-  }, [user]);
+  }, []);
 
   function register() {
     console.log("register");
@@ -43,7 +43,7 @@ const Nav = () => {
 
   function logout() {
     signOut(auth);
-    setUser({});
+    setUser(null);
   }
 
   return (
@@ -55,17 +55,27 @@ const Nav = () => {
             <img className="logo__img" src={Logo} alt=""></img>
           </figure>
         </div>
+        <div className="nav__skeletons">
+          <div className="nav__skeleton--button"></div>
+          <div className="nav__skeleton--circle"></div>
+        </div>
         <div className="nav__links">
-          {
-            user.length > 0 ?
-            'fdasfda' :
+          {user && (
+            <button className="btn btn__logout" onClick={logout}>
+              E
+            </button>
+          )}
+          {!user && (
             <>
-            <button className="btn btn__register" onClick={register}>Register</button>
-            <button className="btn btn__login" onClick={login}>Login</button>
+              <button className="btn btn__register" onClick={register}>
+                Register
+              </button>
+              <button className="btn btn__login" onClick={login}>
+                Login
+              </button>
             </>
-          }
-          <button className="btn btn__logout" onClick={logout}>E</button>
-          
+          )}
+
           {loading ? "loading..." : user.email}
           {/* <button className="btn user__letter">Y</button> */}
         </div>
