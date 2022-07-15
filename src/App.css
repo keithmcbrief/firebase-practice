@@ -34,6 +34,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .btn {
@@ -87,4 +88,24 @@ img {
     border: none;
     border-radius: 50%;
     font-size: 24px;
+}
+
+.nav__skeleton--button {
+    width: 160px;
+    height: 40px;
+    background-color: rgba(128, 128, 128, 0.378);
+    position: absolute;
+    top: 10px;
+    right: 80px;
+    border-radius: 10px;
+}
+
+.nav__skeleton--circle {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(128, 128, 128, 0.378);
+    border-radius: 10px;
+    position: absolute;
+    top: 10px;
+    right: 24px
 }
