@@ -55,17 +55,12 @@ const Nav = () => {
             <img className="logo__img" src={Logo} alt=""></img>
           </figure>
         </div>
-        {/* <div className="nav__skeletons">
-          <div className="nav__skeleton--button"></div>
-          <div className="nav__skeleton--circle"></div>
-        </div> */}
         <div className="nav__links">
           {user && (
             <button className="btn btn__logout" onClick={logout}>
               {user.email[0]}
             </button>
           )}
-
           {!user && !loading && (
             <>
               <button className="btn btn__register" onClick={register}>
@@ -76,7 +71,6 @@ const Nav = () => {
               </button>
             </>
           )}
-
           {loading && (
             <div className="nav__skeletons">
               <div className="nav__skeleton--button"></div>
