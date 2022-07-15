@@ -62,7 +62,7 @@ const Nav = () => {
             <>
             <button className="btn btn__register" onClick={register}>Register</button>
             <button className="btn btn__login" onClick={login}>Login</button>
-            logged out
+            logged out!
             </>
           }
           
