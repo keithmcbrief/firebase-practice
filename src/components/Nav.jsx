@@ -58,7 +58,7 @@ const Nav = () => {
         <div className="nav__links">
           {user && (
             <button className="btn btn__logout" onClick={logout}>
-              {user.email[0]}
+              {user.email[0].toUpperCase()}
             </button>
           )}
           {!user && !loading && (
