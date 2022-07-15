@@ -58,16 +58,16 @@ const Nav = () => {
         <div className="nav__links">
           {
             user.length > 0 ?
-            'logged in' :
+            'fdasfda' :
             <>
             <button className="btn btn__register" onClick={register}>Register</button>
             <button className="btn btn__login" onClick={login}>Login</button>
-            logged out!
             </>
           }
+          <button className="btn btn__logout" onClick={logout}>E</button>
           
-          
-          {/* {loading ? "loading..." : user.email} */}
+          {loading ? "loading..." : user.email}
+          {/* <button className="btn user__letter">Y</button> */}
         </div>
       </div>
     </div>
